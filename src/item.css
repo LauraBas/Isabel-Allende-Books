@@ -1,34 +1,41 @@
-.item{
-
+.item {
     display: inline-block;
     padding: 10px;
     margin: 15px;
     width: 200px;
     vertical-align: top;
 }
-.item .image img{
+
+.item .image img {
     height: 330px;
 }
 
-.item .title{
+.item .title {
     font-weight: bold;
     font-size: 18px;
     height: 60px;
 }
 
-.item .actions{
+.item .actions {
     width: 100%;
     border-top: solid 1px #bbb;
     padding: 5px 0;
     margin-top: 10px;
 }
 
-.item .actions button{
+.item .actions button {
     border: 0;
     border-radius: 3px;
-    background-color:rgb(232, 78, 78);
+    background-color: lightcoral;
     color: white;
     font-weight: bold;
     padding: 5px;
     width: 100%;
+}
+
+#chau {
+    font-family: cursive;
+    color: indianred;
+    text-align: center;
+    font-size: 18px;
 }

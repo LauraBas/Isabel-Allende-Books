@@ -86,10 +86,13 @@ class App extends React.Component {
                     onupdaterating={this.onUpdateRating}
                     onremove={this.onRemove}
                 />
+                <footer>
+                    <p id="chau">Made with Love</p>
+                </footer>
             </div>
+
         );
     }
-
 }
 
 export default App;
