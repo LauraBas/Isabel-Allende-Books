@@ -26,11 +26,14 @@ class App extends React.Component {
 
         };
     }
+    onAdd = (item) => {
+        console.log(item);
+}
 
     render() {
         return (
             <div className="app">
-                <Menu title="Books"/>
+                <Menu title="Isabel Allende" onadd={this.onAdd}/>
                 <List items={this.state.books}/>
             </div>
         );

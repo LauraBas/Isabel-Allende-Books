@@ -11,7 +11,7 @@ class Item extends React.Component {
 
     componentDidMount() {
         this.setState({
-            starts: Array(parseInt(this.props.rating)).fill(1)
+            stars: Array(parseInt(this.props.rating)).fill(1)
         });
     }
 
