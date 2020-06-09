@@ -13,7 +13,7 @@ class App extends React.Component {
                 {id: 2, rating: 5, title: "De Amor y De Sombra", image: "libro03.jpg"},
                 {id: 3, rating: 4, title: "El Bosque de los Pigmeos", image: "libro04.jpg"},
                 {id: 4, rating: 4, title: "Cuentos de Eva Luna", image: "libro05.jpg"},
-                {id: 5, rating: 4, title: "La Isla bajo el Mar", image: "libro06.jpg"},
+                {id: 5, rating: 4, title: "La Casa de los Espíritus", image: "libro06.jpg"},
                 {id: 6, rating: 3, title: "Paula", image: "libro07.jpg"},
                 {id: 7, rating: 3, title: "Largo Pétalo de Mar", image: "libro08.jpg"},
                 {id: 8, rating: 5, title: "El Amante Japonés", image: "libro09.jpg"},
@@ -22,9 +22,31 @@ class App extends React.Component {
                 {id: 11, rating: 5, title: "Más allá del Invierno", image: "libro12.jpg"},
                 {id: 12, rating: 3, title: "El Reino del Dragòn de Oro", image: "libro13.jpg"},
                 {id: 13, rating: 5, title: "Mi país inventado", image: "libro14.jpg"},
-            ]
-
+            ],
+            copyBooks: []
         };
+    }
+    componentDidMount() {
+        this.initBooks();
+    }
+    onSearch = (query) => {
+        if(query === ''){
+            this.initBooks();
+        } else {
+            const temp = [...this.state.books];
+            let res = [];
+            temp.forEach(item => {
+                if(item.title.toLocaleLowerCase().indexOf(query) > -1){
+                    res.push(item);
+                }
+            });
+            this.setState({copyBooks: [...res]});
+        }
+    }
+    initBooks = () => {
+        this.setState((state,props) => ({
+            copyBooks: [...state.books]
+        }));
     }
     onAdd = (item) => {
         let temp = [...this.state.books];
@@ -33,13 +55,14 @@ class App extends React.Component {
         temp.push(item);
 
         this.setState({books:[...temp]});
+        this.initBooks();
 }
 
     render() {
         return (
             <div className="app">
-                <Menu title="Isabel Allende" onadd={this.onAdd}/>
-                <List items={this.state.books}/>
+                <Menu title="Isabel Allende" onadd={this.onAdd} onsearch={this.onSearch}/>
+                <List items={this.state.copyBooks}/>
             </div>
         );
     }
