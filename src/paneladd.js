@@ -17,7 +17,7 @@ class PanelAdd extends React.Component {
     }
     onChangeRating = (e) => {
         const rating = parseInt(e.target.value);
-        this.setState({title: rating});
+        this.setState({rating: rating});
     }
     onSubmit = (e) => {
         e.preventDefault();
@@ -36,12 +36,12 @@ class PanelAdd extends React.Component {
                     <form onSubmit={this.onSubmit}>
                         <p>
                             <label>Book Title</label><br/>
-                            <input onChange={this.onChangeTitle.title}type="text" name="title" className="input"/>
+                            <input onChange={this.onChangeTitle}type="text" name="title" className="input"/>
                         </p>
 
                         <p>
                             <label>Image Name</label><br/>
-                            <input onChange={this.onChangeImage.title}type="text" name="image" className="input"/>
+                            <input onChange={this.onChangeImage}type="text" name="image" className="input"/>
                         </p>
 
                         <p>
@@ -54,7 +54,7 @@ class PanelAdd extends React.Component {
                                 <option value="5">5</option>
                             </select>
                         </p>
-                        <input type="submit" className="button btn-blue" value="Registrar libro"/>
+                        <input type="submit" className="button btn-blue" value="Add Book"/>
                         <button onClick={this.props.oncancel} className="button btn-normal">Cancel</button>
                     </form>
                 </div>
