@@ -8,7 +8,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             books: [
-                {id: 0, rating: 5, title: "La Isla bajo el mar", image: "libro01.jpg"},
+                {id: 0, rating: 5, title: "La Isla bajo el mar", image:"libro01.jpg"},
                 {id: 1, rating: 3, title: "La Hija de la Fortuna", image: "libro02.jpg"},
                 {id: 2, rating: 5, title: "De Amor y De Sombra", image: "libro03.jpg"},
                 {id: 3, rating: 4, title: "El Bosque de los Pigmeos", image: "libro04.jpg"},
